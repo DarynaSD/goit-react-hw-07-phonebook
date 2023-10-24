@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { rootReducer } from './reducer';
 
-import { FLUSH, PAUSE, PERSIST, PURGE, REGISTER, REHYDRATE, persistStore } from 'redux-persist'
+import { FLUSH, PAUSE, PERSIST, PURGE, REGISTER, REHYDRATE } from 'redux-persist'
 // import storage from 'redux-persist/lib/storage' 
 
 
@@ -17,7 +17,7 @@ export const store = configureStore({ reducer: rootReducer, middleware: (getDefa
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }), });
-export const persistor = persistStore(store)
+//export const persistor = persistStore(store)
 
 
 

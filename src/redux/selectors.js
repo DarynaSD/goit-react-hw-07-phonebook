@@ -1,7 +1,19 @@
-export const selectorContacts = (store) => {
-	return store.contactsHandler.contacts
+import { createSelector } from "@reduxjs/toolkit"
+
+export const selectorContacts = (state) => {
+	return state.contactsHandler.contacts.items
 }
 
-export const selectorFilter = (store) => {
-	return store.contactsHandler.filter
+export const selectorFilter = (state) => {
+	return state.contactsHandler.filter
 }
+
+export const selectorVisible = createSelector(
+	[selectorContacts, selectorFilter],
+	(contacts, filter) =>
+		contacts && filter
+			? contacts.filter((one) =>
+					one.name.toLowerCase().includes(filter.toLowerCase())
+			  )
+			: contacts
+)
