@@ -3,15 +3,16 @@ import { INITAL } from './initialState';
 
 export const filterSlice = createSlice({
   name: 'filter',
-  initialState: INITAL, 
+  initialState: INITAL.filter, 
   reducers: {
     filterContact: (state, { payload }) => {
-      console.log('payload', payload)
+      //console.log('payload', payload)
       if (payload.length) {
-        state.filter = payload
-        console.log(state)
+      //console.log(state)
+       return state = payload
+        
       } else
-        state.filter = '' },
+       return  state = '' },
   },
 });
 

@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-import {ContactName, ContactNumber, DeleteBtn} from './styled/Parts.styled'
+import { ContactName, ContactNumber, DeleteBtn } from './styled/Parts.styled';
 import { useDispatch } from 'react-redux';
-import {  removeContact } from 'redux/slice';
+import { removeContact } from 'redux/thunks';
+
 
 const ContactItem = ({ item }) => {
   // const [idItem] = useState([item].id)
@@ -21,6 +22,6 @@ const ContactItem = ({ item }) => {
       </DeleteBtn>
     </li>
   );
-}
+};
 
-export default ContactItem
+export default ContactItem;
